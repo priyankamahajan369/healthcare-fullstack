@@ -1,0 +1,25 @@
+<!-- This Maven file builds one Spring Boot microservice. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- This selects the Maven POM format. -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- This connects this service to our backend parent POM. -->
+  <parent><groupId>com.interview.healthcare</groupId><artifactId>healthcare-platform_Maven</artifactId><version>1.0.0</version><relativePath>../pom.xml</relativePath></parent>
+  <!-- This names this service artifact. -->
+  <artifactId>appointment-service_REST_ServiceCommunication</artifactId>
+  <!-- This adds Spring MVC and REST support. -->
+  <dependencies>
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-web</artifactId></dependency>
+    <!-- This adds JPA APIs and Hibernate ORM implementation. -->
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-data-jpa</artifactId></dependency>
+    <!-- This lets Hibernate connect to PostgreSQL. -->
+    <dependency><groupId>org.postgresql</groupId><artifactId>postgresql</artifactId><scope>runtime</scope></dependency>
+    <!-- This adds request validation such as @NotBlank. -->
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-validation</artifactId></dependency>
+    <!-- This provides JUnit, Mockito, MockMvc and Spring test support. -->
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-test</artifactId><scope>test</scope></dependency>
+    <!-- This provides an in-memory database for fast automated tests. -->
+    <dependency><groupId>com.h2database</groupId><artifactId>h2</artifactId><scope>test</scope></dependency>
+  </dependencies>
+  <!-- This plugin packages the service as an executable Spring Boot JAR. -->
+  <build><plugins><plugin><groupId>org.springframework.boot</groupId><artifactId>spring-boot-maven-plugin</artifactId></plugin></plugins></build>
+</project>

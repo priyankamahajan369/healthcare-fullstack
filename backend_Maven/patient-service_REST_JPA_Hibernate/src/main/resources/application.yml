@@ -1,0 +1,16 @@
+# This sets the patient service HTTP port.
+server:
+  port: 8081
+# This configures the PostgreSQL connection used by JPA and Hibernate.
+spring:
+  datasource:
+    url: ${PATIENT_DB_URL:jdbc:postgresql://localhost:5433/patientdb}
+    username: ${PATIENT_DB_USER:postgres}
+    password: ${PATIENT_DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true

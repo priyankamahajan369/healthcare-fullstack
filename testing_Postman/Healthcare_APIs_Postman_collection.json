@@ -1,0 +1,130 @@
+{
+  "info": {
+    "name": "Healthcare CRUD APIs_Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Patient - POST",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Shah\",\n  \"medicalRecordNumber\": \"MRN-DEMO-1001\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/patients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "patients"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Read Patients - GET",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/patients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "patients"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Patient - PUT",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Patel\",\n  \"medicalRecordNumber\": \"MRN-DEMO-1001\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/patients/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "patients",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Patient - DELETE",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8081/api/patients/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "patients",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Appointment - Service Communication",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientId\": 1,\n  \"appointmentTime\": \"2026-10-20T10:30:00\",\n  \"reason\": \"Follow-up\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/appointments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "appointments"
+          ]
+        }
+      }
+    }
+  ]
+}

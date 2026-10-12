@@ -1,0 +1,14 @@
+# This starts with Node for the React development server.
+FROM node:22-alpine
+# This sets the frontend folder inside the container.
+WORKDIR /app
+# This copies package metadata first for dependency caching.
+COPY frontend_React_Redux/package*.json ./
+# This installs React, Redux, Axios and Vite.
+RUN npm install
+# This copies the remaining frontend source.
+COPY frontend_React_Redux .
+# This exposes Vite's default port.
+EXPOSE 5173
+# This starts Vite and accepts container network traffic.
+CMD ["npm","start"]

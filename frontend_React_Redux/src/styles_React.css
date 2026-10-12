@@ -1,0 +1,253 @@
+/* This defines reusable corporate healthcare colors and spacing values. */
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1c2b3a; background: #f4f7fa; font-synthesis: none; }
+/* This makes element sizing predictable throughout the dashboard. */
+* { box-sizing: border-box; }
+/* This removes browser spacing and gives the application a professional background. */
+body { margin: 0; min-width: 1100px; min-height: 100vh; background: #f4f7fa; }
+/* This makes buttons and inputs inherit the corporate application font. */
+button, input, select { font: inherit; }
+/* This creates the fixed sidebar and flexible content area. */
+.app-shell { display: flex; min-height: 100vh; }
+/* This styles the dark enterprise navigation rail. */
+.sidebar { position: fixed; inset: 0 auto 0 0; width: 248px; display: flex; flex-direction: column; padding: 24px 18px; background: linear-gradient(180deg, #102c3f 0%, #15384e 58%, #102b3d 100%); color: white; box-shadow: 8px 0 30px rgba(25, 45, 65, .08); z-index: 20; }
+/* This aligns the healthcare product logo and name. */
+.brand { display: flex; align-items: center; gap: 12px; padding: 2px 8px 24px; border-bottom: 1px solid rgba(255,255,255,.09); }
+/* This creates the square corporate product mark. */
+.brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, #3cc9bb, #5cc3ff); color: #0b2b3e; font-weight: 900; letter-spacing: -.04em; }
+/* This styles the product name. */
+.brand strong { display: block; font-size: 17px; letter-spacing: -.02em; }
+/* This styles secondary product text. */
+.brand small { display: block; margin-top: 2px; color: #a9c0cf; font-size: 11px; text-transform: uppercase; letter-spacing: .09em; }
+/* This spaces the primary application navigation. */
+.sidebar nav { display: grid; gap: 7px; margin-top: 28px; }
+/* This styles every navigation button. */
+.nav-item { width: 100%; display: flex; align-items: center; gap: 13px; padding: 12px 13px; border: 0; border-radius: 10px; color: #c8d8e2; background: transparent; cursor: pointer; text-align: left; font-weight: 650; transition: .18s ease; }
+/* This styles navigation hover behavior. */
+.nav-item:hover { color: white; background: rgba(255,255,255,.07); }
+/* This clearly identifies the selected navigation page. */
+.nav-item.active { color: white; background: linear-gradient(90deg, rgba(60,201,187,.22), rgba(92,195,255,.10)); box-shadow: inset 3px 0 #45d0c3; }
+/* This aligns the small navigation icon. */
+.nav-icon { width: 24px; display: inline-grid; place-items: center; font-size: 18px; }
+/* This anchors environment information at the bottom of the sidebar. */
+.sidebar-footer { margin-top: auto; padding: 18px 10px 4px; border-top: 1px solid rgba(255,255,255,.09); }
+/* This styles the environment section label. */
+.sidebar-footer > p { margin: 0 0 10px; color: #829cab; font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+/* This aligns environment status information. */
+.environment { display: flex; align-items: center; gap: 9px; }
+/* This styles environment primary text. */
+.environment strong { display: block; font-size: 12px; }
+/* This styles environment secondary text. */
+.environment small { color: #90a9b8; font-size: 11px; }
+/* This offsets main content so it does not sit under the fixed sidebar. */
+.main-content { width: calc(100% - 248px); margin-left: 248px; }
+/* This creates the enterprise application header. */
+.topbar { min-height: 88px; display: flex; align-items: center; justify-content: space-between; padding: 17px 34px; background: white; border-bottom: 1px solid #e7edf2; position: sticky; top: 0; z-index: 10; }
+/* This styles the breadcrumb line above the page heading. */
+.breadcrumb { margin: 0 0 3px; color: #718395; font-size: 12px; }
+/* This styles the current page title. */
+.topbar h1 { margin: 0; color: #163247; font-size: 24px; letter-spacing: -.035em; }
+/* This aligns header action controls. */
+.topbar-actions { display: flex; align-items: center; gap: 12px; }
+/* This styles the signed-in user card. */
+.user-chip { display: flex; align-items: center; gap: 9px; padding-left: 13px; border-left: 1px solid #e3eaf0; }
+/* This styles the user initials circle. */
+.user-avatar { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: #e8f5f4; color: #14796f; font-size: 12px; font-weight: 800; }
+/* This styles the user name. */
+.user-chip strong { display: block; font-size: 12px; }
+/* This styles the user role. */
+.user-chip small { color: #8997a5; font-size: 10px; }
+/* This adds consistent page spacing. */
+.content-area { padding: 28px 34px 50px; }
+/* This displays dashboard metrics in one corporate row. */
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(190px, 1fr)); gap: 16px; margin-bottom: 18px; }
+/* This styles a metric card. */
+.metric-card { display: flex; align-items: center; gap: 15px; min-height: 126px; padding: 20px; border: 1px solid #e5ebf0; border-radius: 14px; background: white; box-shadow: 0 4px 20px rgba(23, 48, 67, .045); }
+/* This styles the compact icon block on metric cards. */
+.metric-icon { width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center; border-radius: 12px; font-size: 13px; font-weight: 900; }
+/* These color variations visually separate different operational metrics. */
+.blue-tone .metric-icon { background: #e8f1ff; color: #2767b8; }
+.green-tone .metric-icon { background: #e4f7f1; color: #167a68; }
+.purple-tone .metric-icon { background: #f1ebff; color: #6f4fb2; }
+.orange-tone .metric-icon { background: #fff1dc; color: #a96816; }
+/* This styles the small metric heading. */
+.metric-label { margin: 0 0 4px; color: #738596; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+/* This styles the large metric number. */
+.metric-card h3 { margin: 0; color: #17354a; font-size: 28px; line-height: 1; }
+/* This styles explanatory text under each metric. */
+.metric-detail { margin: 7px 0 0; color: #94a1ad; font-size: 11px; }
+/* This creates a polished operational summary banner. */
+.overview-banner { display: grid; grid-template-columns: 1fr 150px 150px; align-items: center; gap: 18px; margin-bottom: 18px; padding: 24px 28px; border-radius: 15px; background: linear-gradient(120deg, #173d55 0%, #175b6a 60%, #167b78 100%); color: white; box-shadow: 0 12px 28px rgba(21,70,85,.15); }
+/* This styles the overview title. */
+.overview-banner h2 { margin: 2px 0 6px; font-size: 21px; }
+/* This styles overview explanatory text. */
+.overview-banner p { max-width: 740px; margin: 0; color: #d6e8ed; font-size: 12px; line-height: 1.6; }
+/* This creates small summary metric boxes inside the banner. */
+.banner-stat { padding: 12px 15px; border-left: 1px solid rgba(255,255,255,.2); }
+/* This styles the banner metric number. */
+.banner-stat span { display: block; font-size: 26px; font-weight: 800; }
+/* This styles the banner metric label. */
+.banner-stat small { color: #c5dde4; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
+/* This creates the shared white enterprise content card. */
+.panel { margin-bottom: 18px; padding: 21px 22px; border: 1px solid #e2e9ef; border-radius: 14px; background: white; box-shadow: 0 4px 18px rgba(28, 51, 70, .035); }
+/* This aligns panel titles with primary actions. */
+.panel-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+/* This styles small section labels used throughout the product. */
+.eyebrow { margin: 0 0 5px; color: #158d85; font-size: 9px; font-weight: 900; letter-spacing: .14em; }
+/* This provides a light banner variation of the eyebrow text. */
+.eyebrow.light { color: #9be1dc; }
+/* This styles content panel headings. */
+.panel h2 { margin: 0; color: #1c384c; font-size: 17px; letter-spacing: -.02em; }
+/* This styles explanatory panel subtitles. */
+.panel-subtitle { margin: 5px 0 0; color: #8594a2; font-size: 11px; }
+/* This styles primary workflow actions. */
+.primary-button { border: 0; border-radius: 9px; padding: 10px 15px; background: #276bb7; color: white; font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(39,107,183,.15); }
+/* This provides a healthcare teal primary action variation. */
+.primary-button.teal { background: #168f84; box-shadow: 0 4px 10px rgba(22,143,132,.15); }
+/* This styles neutral secondary controls. */
+.secondary-button { border: 1px solid #d8e1e8; border-radius: 9px; padding: 9px 13px; background: white; color: #466174; font-size: 11px; font-weight: 750; cursor: pointer; }
+/* This adds subtle hover feedback to buttons. */
+.primary-button:hover, .secondary-button:hover { filter: brightness(.97); transform: translateY(-1px); }
+/* This aligns search and record count controls above data tables. */
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 12px; }
+/* This creates the corporate search control. */
+.search-box { width: min(430px, 60%); display: flex; align-items: center; gap: 8px; padding: 0 11px; border: 1px solid #dfe7ed; border-radius: 9px; background: #f9fbfc; color: #8a99a6; }
+/* This removes duplicate input styling inside the search control. */
+.search-box input { width: 100%; padding: 9px 0; border: 0; outline: 0; background: transparent; color: #243c4d; font-size: 11px; }
+/* This styles small record count text. */
+.record-count { color: #8b9aa6; font-size: 10px; font-weight: 700; }
+/* This permits wide tables to scroll if the browser is narrow. */
+.table-wrap { overflow-x: auto; border: 1px solid #edf1f4; border-radius: 10px; }
+/* This creates a clean enterprise data table. */
+table { width: 100%; border-collapse: collapse; background: white; }
+/* This styles the table column headings. */
+th { padding: 10px 12px; background: #f7f9fb; border-bottom: 1px solid #e7edf1; color: #728493; font-size: 9px; text-align: left; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+/* This styles the data table cells. */
+td { padding: 12px; border-bottom: 1px solid #eef2f5; color: #3a5364; font-size: 11px; vertical-align: middle; }
+/* This removes the final unnecessary table row border. */
+tbody tr:last-child td { border-bottom: 0; }
+/* This gives rows a subtle hover cue expected in enterprise software. */
+tbody tr:hover { background: #fbfcfd; }
+/* This styles compact internal IDs. */
+.id-pill { display: inline-block; padding: 4px 7px; border-radius: 6px; background: #edf4fb; color: #3c6586; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; font-weight: 800; }
+/* This distinguishes appointment IDs from patient IDs. */
+.id-pill.appointment { background: #eaf7f4; color: #28736a; }
+/* This aligns avatar and patient name. */
+.person-cell { display: flex; align-items: center; gap: 9px; }
+/* This creates a compact patient avatar. */
+.avatar { width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center; border-radius: 50%; background: #e9f0f6; color: #3a637e; font-size: 9px; font-weight: 900; }
+/* This styles secondary information under primary table text. */
+.person-cell small, .cell-note { display: block; margin-top: 2px; color: #9aa6b0; font-size: 9px; }
+/* This creates a data-source badge. */
+.source-badge { display: inline-block; padding: 4px 7px; border-radius: 12px; background: #eef7ff; color: #3978ad; font-size: 9px; font-weight: 700; }
+/* This aligns row-level table actions. */
+.row-actions { display: flex; gap: 8px; }
+/* This makes row actions look lightweight rather than oversized buttons. */
+.text-button { padding: 0; border: 0; background: transparent; color: #3471a9; font-size: 10px; font-weight: 800; cursor: pointer; }
+/* This highlights destructive table actions. */
+.danger-text { color: #bd5b5b; }
+/* This provides clear status badges for appointment operations. */
+.status-badge { display: inline-block; min-width: 65px; padding: 4px 8px; border-radius: 20px; font-size: 9px; font-weight: 800; text-align: center; }
+/* This styles future scheduled appointments. */
+.status-badge.scheduled { background: #eaf1ff; color: #526fb6; }
+/* This styles appointments within the next twenty-four hours. */
+.status-badge.today { background: #fff1da; color: #9b671c; }
+/* This styles appointments whose scheduled time has passed. */
+.status-badge.completed { background: #e7f5ef; color: #3d8068; }
+/* This styles fallback unknown status values. */
+.status-badge.unknown { background: #f0f2f4; color: #687783; }
+/* This styles table empty and loading messages. */
+.empty-state { padding: 28px; color: #91a0ac; text-align: center; }
+/* This styles navigation links at the bottom of overview tables. */
+.link-button { margin-top: 11px; padding: 0; border: 0; background: transparent; color: #278176; font-size: 10px; font-weight: 800; cursor: pointer; }
+/* This creates the interview-oriented architecture page layout. */
+.integration-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+/* This makes the architecture panel span the full integration page width. */
+.architecture-panel { grid-column: 1 / -1; }
+/* This displays the system request path from browser to database. */
+.architecture-flow { display: flex; align-items: stretch; justify-content: space-between; gap: 9px; margin-top: 25px; }
+/* This styles each technology box in the architecture path. */
+.architecture-node { min-width: 145px; flex: 1; padding: 15px; border: 1px solid #e1e9ef; border-radius: 11px; background: #fbfcfd; }
+/* This styles the numbered architecture step. */
+.architecture-node span { display: block; margin-bottom: 12px; color: #8da0ae; font-size: 9px; font-weight: 900; }
+/* This styles the technology name. */
+.architecture-node strong { display: block; color: #25465c; font-size: 12px; }
+/* This styles the technology responsibility. */
+.architecture-node small { display: block; margin-top: 5px; color: #8295a3; font-size: 9px; }
+/* These top borders help visually distinguish architecture responsibilities. */
+.ui-node { border-top: 3px solid #4c8ed0; }
+.redux-node { border-top: 3px solid #765ab6; }
+.api-node { border-top: 3px solid #c47f38; }
+.java-node { border-top: 3px solid #418d7f; }
+.db-node { border-top: 3px solid #536b7a; }
+/* This styles arrows between architecture nodes. */
+.architecture-arrow { display: grid; place-items: center; color: #9cafba; font-size: 18px; }
+/* This emphasizes service-to-service communication under the primary request path. */
+.service-bridge { display: grid; grid-template-columns: 1fr 160px 1fr; align-items: center; gap: 12px; margin-top: 18px; padding: 14px 18px; border: 1px dashed #aad6d0; border-radius: 10px; background: #f5fbfa; text-align: center; }
+/* This styles service-to-service titles. */
+.service-bridge strong { display: block; color: #28685f; font-size: 11px; }
+/* This styles service-to-service descriptions. */
+.service-bridge small { display: block; margin-top: 3px; color: #78978f; font-size: 9px; }
+/* This highlights the REST validation direction. */
+.service-bridge > span { color: #3b9287; font-size: 9px; font-weight: 800; }
+/* This creates a vertical list of live service indicators. */
+.health-list { margin-top: 18px; display: grid; gap: 12px; }
+/* This aligns each service name, status dot, and operational status. */
+.health-row { display: grid; grid-template-columns: 12px 1fr auto; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid #edf1f3; }
+/* This creates the green service status indicator. */
+.health-dot { width: 8px; height: 8px; border-radius: 50%; background: #2dbb7f; box-shadow: 0 0 0 3px rgba(45,187,127,.12); }
+/* This creates a red service status indicator when a Redux request fails. */
+.health-dot.down { background: #d85b5b; box-shadow: 0 0 0 3px rgba(216,91,91,.12); }
+/* This styles the service name. */
+.health-row strong { display: block; font-size: 11px; }
+/* This styles service connection details. */
+.health-row small { display: block; margin-top: 2px; color: #91a0ac; font-size: 9px; }
+/* This styles operational status text. */
+.health-state { color: #30826b; font-size: 9px; font-weight: 800; }
+/* This spaces the API catalog entries. */
+.api-catalog { display: grid; align-content: start; }
+/* This styles one API endpoint row. */
+.endpoint { display: grid; grid-template-columns: 56px 1.4fr 1fr; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #edf1f4; }
+/* This styles endpoint URLs. */
+.endpoint code { color: #425d70; font-size: 10px; }
+/* This styles endpoint descriptions. */
+.endpoint small { color: #8b9aa6; font-size: 9px; }
+/* This styles HTTP method labels. */
+.method { display: inline-block; padding: 4px 5px; border-radius: 5px; font-size: 8px; font-weight: 900; text-align: center; }
+/* This colors GET labels. */
+.method.get { background: #e7f2ff; color: #3972a7; }
+/* This colors POST labels. */
+.method.post { background: #e7f7ef; color: #34795e; }
+/* This colors PUT labels. */
+.method.put { background: #fff3dc; color: #95631e; }
+/* This colors DELETE labels. */
+.method.delete { background: #fdeaea; color: #a34e4e; }
+/* This creates the darkened overlay behind create and edit forms. */
+.modal-backdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: 30px; background: rgba(16,37,52,.45); backdrop-filter: blur(3px); z-index: 50; }
+/* This styles a corporate create or edit modal. */
+.modal-card { width: min(520px, 90vw); padding: 23px; border-radius: 15px; background: white; box-shadow: 0 25px 70px rgba(15,35,50,.22); }
+/* This aligns the modal title with its close action. */
+.modal-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
+/* This styles modal titles. */
+.modal-header h2 { margin: 0; color: #1b3b50; font-size: 20px; }
+/* This creates the lightweight modal close control. */
+.close-button { border: 0; background: transparent; color: #8293a0; font-size: 26px; cursor: pointer; }
+/* This makes labels easy to scan in enterprise forms. */
+.modal-card label { display: block; margin: 13px 0; color: #52697a; font-size: 10px; font-weight: 800; }
+/* This styles modal form controls consistently. */
+.modal-card input, .modal-card select { width: 100%; margin-top: 6px; padding: 10px 11px; border: 1px solid #d9e2e8; border-radius: 8px; outline: 0; background: #fbfcfd; color: #2a4658; font-size: 11px; }
+/* This highlights the currently focused field. */
+.modal-card input:focus, .modal-card select:focus { border-color: #62a9b9; box-shadow: 0 0 0 3px rgba(98,169,185,.10); }
+/* This explains the cross-service behavior directly in the appointment workflow. */
+.communication-note { margin: 15px 0; padding: 11px 12px; border-left: 3px solid #48a69b; border-radius: 6px; background: #eef8f6; }
+/* This styles the service communication note heading. */
+.communication-note strong { display: block; color: #36786f; font-size: 10px; }
+/* This styles the service communication note text. */
+.communication-note span { display: block; margin-top: 3px; color: #6f8d87; font-size: 9px; }
+/* This aligns form workflow buttons. */
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+/* This shows backend connectivity errors without disrupting the layout. */
+.error-banner { margin: 18px 34px -10px; padding: 11px 14px; border: 1px solid #efc8c8; border-radius: 8px; background: #fff1f1; color: #9a5252; font-size: 10px; }
+/* This creates a small success notification in the bottom-right corner. */
+.toast { position: fixed; right: 26px; bottom: 24px; padding: 12px 16px; border-radius: 9px; background: #163e4e; color: white; font-size: 10px; font-weight: 700; box-shadow: 0 14px 35px rgba(18,48,63,.22); z-index: 60; }
+/* This keeps the dashboard usable on slightly smaller laptop screens. */
+@media (max-width: 1250px) { .metric-grid { grid-template-columns: repeat(2, 1fr); } .overview-banner { grid-template-columns: 1fr 120px 120px; } .architecture-flow { flex-wrap: wrap; } .architecture-arrow { display: none; } .integration-grid { grid-template-columns: 1fr; } .architecture-panel { grid-column: auto; } }

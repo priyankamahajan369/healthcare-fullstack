@@ -1,0 +1,16 @@
+# This starts with a Maven image that can compile Java 17.
+FROM maven:3.9.9-eclipse-temurin-17 AS build
+# This chooses a workspace inside the image.
+WORKDIR /workspace
+# This copies the complete Maven backend so parent/module POMs resolve.
+COPY backend_Maven /workspace/backend_Maven
+# This compiles only Patient Service and required parent metadata.
+RUN mvn -f /workspace/backend_Maven/pom.xml -pl patient-service_REST_JPA_Hibernate -am clean package -DskipTests
+# This starts a smaller Java runtime image.
+FROM eclipse-temurin:17-jre
+# This sets the runtime folder.
+WORKDIR /app
+# This copies the built Patient Service JAR.
+COPY --from=build /workspace/backend_Maven/patient-service_REST_JPA_Hibernate/target/*.jar app.jar
+# This starts the microservice.
+ENTRYPOINT ["java","-jar","app.jar"]

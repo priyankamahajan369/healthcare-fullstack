@@ -1,0 +1,16 @@
+# This starts with Maven and Java 17 for compilation.
+FROM maven:3.9.9-eclipse-temurin-17 AS build
+# This sets the build workspace.
+WORKDIR /workspace
+# This copies the multi-module Maven backend.
+COPY backend_Maven /workspace/backend_Maven
+# This builds Appointment Service.
+RUN mvn -f /workspace/backend_Maven/pom.xml -pl appointment-service_REST_ServiceCommunication -am clean package -DskipTests
+# This starts a smaller Java runtime image.
+FROM eclipse-temurin:17-jre
+# This sets the runtime folder.
+WORKDIR /app
+# This copies the compiled application.
+COPY --from=build /workspace/backend_Maven/appointment-service_REST_ServiceCommunication/target/*.jar app.jar
+# This starts Appointment Service.
+ENTRYPOINT ["java","-jar","app.jar"]

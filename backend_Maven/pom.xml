@@ -1,0 +1,19 @@
+<!-- This is the Maven parent project file. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- This tells Maven which POM model version is used. -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- This inherits dependency versions and build defaults from Spring Boot. -->
+  <parent><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-parent</artifactId><version>3.3.5</version><relativePath/></parent>
+  <!-- This identifies our company-style package namespace. -->
+  <groupId>com.interview.healthcare</groupId>
+  <!-- This identifies the whole backend project. -->
+  <artifactId>healthcare-platform_Maven</artifactId>
+  <!-- This is the project version. -->
+  <version>1.0.0</version>
+  <!-- POM packaging means this file groups modules instead of building an executable JAR. -->
+  <packaging>pom</packaging>
+  <!-- These are the two independently running microservices. -->
+  <modules><module>patient-service_REST_JPA_Hibernate</module><module>appointment-service_REST_ServiceCommunication</module></modules>
+  <!-- This keeps both services on Java 17. -->
+  <properties><java.version>17</java.version></properties>
+</project>
